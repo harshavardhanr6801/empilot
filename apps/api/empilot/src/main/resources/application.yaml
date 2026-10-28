@@ -2,6 +2,12 @@ spring:
   application:
     name: empilot
 
+    # API versioning
+  mvc:
+    apiversion:
+      use:
+        header: API-Version
+
   datasource:
     url: jdbc:mariadb://localhost:3307/empilot
     username: ${DB_USERNAME}
