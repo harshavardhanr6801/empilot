@@ -2,11 +2,17 @@ spring:
   application:
     name: empilot
 
+  config:
+    import:
+      - optional:file:.env[.properties]
+      - optional:file:apps/api/empilot/.env[.properties]
+
     # API versioning
   mvc:
     apiversion:
+      default: "1.0"
       use:
-        header: API-Version
+        header: API-Version 
 
   datasource:
     url: jdbc:mariadb://localhost:3307/empilot
